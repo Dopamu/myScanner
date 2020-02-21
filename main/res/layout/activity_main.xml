@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/background3"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:layout_width="379dp"
+        android:layout_height="122dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="135dp"
+            android:layout_height="69dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="133dp"
+            android:layout_marginLeft="133dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="21dp"
+            app:srcCompat="@drawable/logl" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:text="You are logged in"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <RelativeLayout
+        android:layout_width="393dp"
+        android:layout_height="491dp"
+        android:orientation="horizontal">
+
+
+        <!--    <TextView-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:text="FullName"-->
+        <!--        android:textColor="#ffffff" />-->
+
+
+        <!--    <EditText-->
+        <!--        android:id="@+id/etFullName"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_marginBottom="10dp" />-->
+
+
+        <!--    <TextView-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:text="Student_Id"-->
+        <!--        android:textColor="#ffffff" />-->
+
+        <!--    <EditText-->
+        <!--        android:id="@+id/etStudent_Id"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_marginBottom="10dp" />-->
+
+        <!--    <TextView-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:text="Username"-->
+        <!--        android:textColor="#ffffff" />-->
+
+        <!--    <EditText-->
+        <!--        android:id="@+id/etUsername"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_marginBottom="10dp" />-->
+
+        <Button
+            android:id="@+id/bLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="21dp"
+            android:text="Logout" />
+
+    </RelativeLayout>
+
+</LinearLayout>

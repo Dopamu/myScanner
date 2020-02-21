@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Scanner</string>
+    <string name="welcome">Welcome</string>
+    <string name="username">Username</string>
+    <string name="register_here">Register Here</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="login_details">Login details</string>
+    <string name="your_id">Your ID</string>
+    <string name="request">Request</string>
+</resources>
