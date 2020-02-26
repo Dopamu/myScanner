@@ -22,9 +22,10 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String COLUMN_EMAIL = "email";
     public static final String COLUMN_USERNAME = "username";
     public static final String COLUMN_PASSWORD = "password";
-    public static final String COLUMN_Class = "CLASS";
+    public static final String COLUMN_MODULE= "module";
 
-    public static final String CREATE_TABLE_USERS = "CREATE TABLE users(student_id INTEGER PRIMARY KEY AUTOINCREMENT, email, TEXT, username TEXT,password TEXT,CLASS TEXT);";
+    // create table for users
+    public static final String CREATE_TABLE_USERS = "CREATE TABLE users(student_id INTEGER PRIMARY KEY AUTOINCREMENT, email, TEXT, username TEXT,password TEXT,module TEXT);";
 
     public DbHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -41,7 +42,9 @@ public class DbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addUser(String email, String CLASS,String username, String password) {
+
+    // add users details to database table
+    public void addUser(String email,String username, String password, String module) {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -49,7 +52,7 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put(COLUMN_EMAIL, email);
         values.put(COLUMN_USERNAME, username);
         values.put(COLUMN_PASSWORD, password);
-        values.put(COLUMN_Class, CLASS);
+        values.put(COLUMN_MODULE, module);
 
 
         long id = db.insert(USER_TABLE, null, values);
@@ -58,10 +61,10 @@ public class DbHelper extends SQLiteOpenHelper {
         Log.d(TAG, "user inserted" + id);
     }
 
+    // get user if they exist in the database table
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public boolean getUser(String username, String password) {
-        //HashMap<String, String> user = new HashMap<String, String>();
-        String selectQuery = String.format("select * from  %s where %s = '%s' and %s = '%s'", USER_TABLE, COLUMN_USERNAME, username, COLUMN_PASSWORD, password);
+    public boolean getUser(String username, String password, String module) {
+        String selectQuery = String.format("select * from  %s where %s = '%s' and %s = '%s' and %s = '%s'", USER_TABLE, COLUMN_USERNAME, username, COLUMN_PASSWORD, password, COLUMN_MODULE, module);
         try (SQLiteDatabase db = this.getReadableDatabase()) {
             Cursor cursor = db.rawQuery(selectQuery, null);
             // Move to first row
@@ -71,7 +74,6 @@ public class DbHelper extends SQLiteOpenHelper {
                 return true;
             }
             cursor.close();
-            db.close();
         }
 
         return false;
